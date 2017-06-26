@@ -4,14 +4,13 @@ $(document).ready(function() {
 
         e.preventDefault();
 
-        
         if (!confirm("¿Esta seguro de eliminar?")) {
             
             return false;
         }
 		
-        var row = $(this).parent('tr');
-        var form = $(this).parent('form');
+        var row = $(this).parents('tr');
+        var form = $(this).parents('form');
         var url = form.attr('action');
 
         $('#alert').show();
