@@ -47,5 +47,24 @@
 	php artisan migrate:refresh --seed
 
 
-6. 
+6. procederemos a usar las vistas de crear y editar para eso usaremos el paquete de laravel collective
 
+	composer require "laravelcollective/html":"^5.4.0"
+
+
+	Next, add your new provider to the providers array of config/app.php:
+
+  	'providers' => [
+    		// ...
+    		Collective\Html\HtmlServiceProvider::class,
+    		// ...
+  	],
+
+	Finally, add two class aliases to the aliases array of config/app.php:
+
+  	'aliases' => [
+    		// ...
+      		'Form' => Collective\Html\FormFacade::class,
+      		'Html' => Collective\Html\HtmlFacade::class,
+    		// ...
+  	],
